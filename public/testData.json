@@ -1,0 +1,26 @@
+{
+    "daysData": [
+        {
+            "date": "01-01-2020",
+            "entries": [
+                {
+                    "date": "03-01-2020",
+                    "text": "Today I answered too many questions on Quora. I don’t know why, maybe because they were interesting questions. Ran to the store to get a few basics; bumped into a friend from work. Afterwards, I realized that I hadn’t even noticed that she changed her hair color. Probably wouldn’t have been polite to mention it. Met Mark at the subway station, decided on Burger King and a movie. Mimi was extra loud meowing at us when we got home later than normal."
+                },
+                {
+                    "date": "14-01-2020",
+                    "text": "It wasn't that bad."
+                }
+            ]
+        },
+        {
+            "date": "17-02-2020",
+            "entries": [
+                {
+                    "date": "17-02-2020",
+                    "text": "My name is Ernest Miller Hemingway I was born on July 21 1899. My favourite authors are Kipling, O. Henry and Steuart Edward White. My favourite flower is Lady Slipper and Tiger Lily. My favourite sports are Trout fishing, Hiking, shooting, football and boxing. My favourite studies are English, Zoology and Chemistry. I intend to travel and write."
+                }
+            ]
+        }
+    ]
+}

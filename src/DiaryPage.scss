@@ -1,0 +1,38 @@
+#diaryinput{
+    overflow: auto;
+    width: 100%;
+    outline: none;
+    resize: none;
+    background-color: var(--primary);
+    border: none;
+    color: var(--accent1);
+}
+.day-title{
+    position: -webkit-sticky; /* Required for Safari */
+    position: sticky;
+    top: 0px;
+}
+.Diary-page{
+    height: 100%;
+}
+.diary-entries{
+    height: 650px;
+    overflow: auto;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--primary);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--text-greyed);
+    border-radius: 20px;
+      }
+  
+  /* Handle on hover */

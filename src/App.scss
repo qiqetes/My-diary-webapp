@@ -1,0 +1,47 @@
+
+
+.calendar{
+  width: 288px;
+  @media (max-height: 700px) {
+    width: 228px;
+  }
+  @media (max-height:1000px) {
+    width: 264px;
+  }
+}
+.cal-row{
+  width: 20px;
+  margin: 0;
+}
+.month-col{
+  padding: 0 !important;
+}
+
+.justify-center-sm{
+  @media (max-width: 768px) {
+    justify-content: center !important;
+  }
+}
+
+.App{
+  margin-top: 100px;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+body {
+  --primary: #1f2f36;
+  --primary-light: #30444e;
+  --primary-lighter: #96a7af;
+  --text: #ffffff;
+  --text-greyed: #b4b4b4;
+  --accent1: #ff565e;
+  --accent2: #ffc542;
+  --accent3: #3ed598;
+}
+
+body{
+  color: var(--text);
+  background-color: var(--primary);
+}
