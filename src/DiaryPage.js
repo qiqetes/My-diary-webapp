@@ -5,20 +5,23 @@ export default class DiaryPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            diaryTextArea: undefined,
+            diaryTextArea: undefined, // TextArea element
             diaryinput: "",
         }
         this.handleChange = this.handleChange.bind(this);
     }
+
     componentDidMount() {
+        // Get the textArea element, so we will call getElementById only once
         let el = document.getElementById("diaryinput");
         this.setState({ diaryTextArea: el });
-        console.log(el)
     }
+
+    // Runs every time something has changed in the textArea
+    // Used to change its height depending on the scroll size
     handleChange(event) {
-        this.setState({ diaryinput: event.target.value })
+        this.setState({ diaryinput: event.target.value }); // FIXME: value not in state.
         let el = this.state.diaryTextArea;
-        console.log(el.scrollHeight, el.clientHeight)
         el.style.height = (el.scrollHeight >= el.clientHeight) ? (el.scrollHeight) + "px" : "60px";
     }
 
@@ -35,7 +38,7 @@ export default class DiaryPage extends Component {
                     <div className="col diary-entries">
 
                         <div className="row">
-                            <textarea name="" placeholder="Text here..." id="diaryinput" value={this.state.value} onChange={this.handleChange}></textarea>
+                            <textarea name="" placeholder="Text here..." id="diaryinput" value={this.state.diaryinput} onChange={this.handleChange}></textarea>
                         </div>
                     </div>
                 </div>

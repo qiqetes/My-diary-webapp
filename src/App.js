@@ -3,35 +3,43 @@ import React, { Component } from 'react'
 import './App.scss'
 import Day from './Day'
 import DiaryPage from './DiaryPage'
+import jsonTest from './testData.json'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      activeDay: "",
       months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-      daysInMonth: [],
-      weekDays: ["Monday", "Thuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      dayMonth: {},
-      selectedDayMonth: {}
+      daysInMonth: [], // Store the number of days each month
+      weekDays: ["Monday", "Thuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], // TDODO: use it
+      dayMonth: {}, // Store today as eg. {day: 01, month: 11}
+      selectedDayMonth: {} // Store the selected day
+
     }
 
+    // BINDINGS
     this.changeSelectedDay = this.changeSelectedDay.bind(this);
   }
+
   componentDidMount() {
+    // Store the number of days in each month:
     let newDIM = []
     for (let i = 0; i < this.state.months.length; i++) {
       newDIM.push(daysInMonth(i, 2020));
     }
     this.setState({ daysInMonth: newDIM });
 
+    // Store wich day is today
     let dayMonth = today();
     this.setState({ dayMonth: dayMonth });
+    // Make today as the selected day by default
     if (this.state.selectedDayMonth.day === undefined) {
       this.setState({ selectedDayMonth: dayMonth });
     }
   }
+
+  // Function used to change the selected day.
   changeSelectedDay(monthN, dayN) {
     console.log("Changing day to: " + dayN + "  and month to: " + monthN);
     let newDayMonth = { day: dayN, month: monthN };
@@ -59,6 +67,7 @@ export default class App extends Component {
                         monthN={i}
                         key={i}
                         changeSelectedDayFunc={this.changeSelectedDay}
+                      // daysWithContent= 
                       />
                     );
                   })
@@ -76,7 +85,8 @@ export default class App extends Component {
 function daysInMonth(month, year) {
   return new Date(year, month, 0).getDate();
 }
-// Return tuple with the actual month and day number
+
+// Return object with the actual month and day number
 function today() {
   let date = new Date();
   let day = date.getDate();
@@ -89,6 +99,13 @@ function today() {
 
 // Component that shows a column with all the days in a month
 function MonthColumn(props) {
+  /// props:
+  ///   nDays: number of days in this month
+  ///   monthN: month number
+  ///   dayMonth: the object with today info
+  ///   selectedDayMonth: the object with day selected info
+  ///   daysWithContent: array with the days that store user diaries
+
   let arr = []
   // First element of the column will be the first letter of the month
   arr.push(

@@ -2,6 +2,10 @@ import React from 'react'
 import './Day.scss'
 
 export default function Day(props) {
+    /// props:
+    ///     isToday: boolean to show if that's the actual day
+    ///     isSelected: boolean to show if that is the selected day
+    ///     hasContent: boolean to show if user has text stored for that day
     return (
         <div className="Day" >
             {/* Added this cover to make the click possible in all cases */}
@@ -15,5 +19,3 @@ export default function Day(props) {
         </div >
     )
 }
-
-// {props.isToday ? 'day today' : 'day'}
