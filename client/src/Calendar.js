@@ -5,7 +5,7 @@ import Day from './Day'
 import DiaryPage from './DiaryPage'
 import jsonTest from './testData.json'
 
-export default class App extends Component {
+export default class Calendar extends Component {
   constructor(props) {
     super(props)
 
