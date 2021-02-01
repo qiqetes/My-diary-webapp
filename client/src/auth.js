@@ -5,7 +5,8 @@ class Auth {
 
     loging(cb) {
         this.authenticated = true;
-        cb();
+        if(cb)
+            cb();
     }
     logout(cb) {
         this.authenticated = false;
